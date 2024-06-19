@@ -12,13 +12,13 @@ import java.util.List;
 @RequestMapping("/api/courses")
 public class CourseController {
 
-    private final CourseRepository repository;
-    public CourseController(CourseRepository repository) {
-        this.repository = repository;
+    private final CourseRepository courseRepository;
+    public CourseController(CourseRepository courseRepository) {
+        this.courseRepository = courseRepository;
     }
 
     @GetMapping
     public List<Course> list() {
-        return repository.findAll();
+        return courseRepository.findAll();
     }
 }

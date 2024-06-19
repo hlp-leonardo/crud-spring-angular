@@ -15,4 +15,16 @@ public class CrudSpringApplication {
 		SpringApplication.run(CrudSpringApplication.class, args);
 	}
 
+	CommandLineRunner initDatabase(CourseRepository courseRepository) {
+		return args -> {
+			courseRepository.deleteAll();
+
+			Course course = new Course();
+			course.setName("Test");
+			course.setCategory("Test");
+
+			courseRepository.save(course);
+		};
+	}
+
 }

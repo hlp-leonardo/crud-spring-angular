@@ -18,5 +18,4 @@ public class Course {
     @Column(name = "category", length = 20, nullable = false)
     private String category;
 
-
 }
